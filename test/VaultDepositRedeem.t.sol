@@ -78,9 +78,9 @@ contract VaultDepositRedeemTest is Test {
     }
 
     function test_InflationAttackImmunity() public {
-        // Attacker deposits tiny amount (1 wei) to initiate vault
+        // Attacker deposits tiny amount (10_000 wei) to initiate vault
         vm.prank(attacker);
-        uint256 attackerShares = vault.depositAsset(address(stETH), 1, attacker);
+        uint256 attackerShares = vault.depositAsset(address(stETH), 10_000, attacker);
         assertGt(attackerShares, 0);
 
         // Attacker attempts donation attack: directly transfers 10 ether to vault

@@ -159,6 +159,7 @@ contract RestakingVault is IRestakingVault {
         uint256 oracleRate = oracle.getRate(asset);
         uint256 assetValueInETH = (amount * oracleRate) / SolsticeMath.WAD;
         uint256 effectiveETHValue = (assetValueInETH * (BPS_DENOMINATOR - config.riskHaircutBps)) / BPS_DENOMINATOR;
+        if (effectiveETHValue == 0) revert InvalidAmount();
 
         // SolsticeMath virtual share offset to prevent inflation front-running
         shares = SolsticeMath.toSharesDown(effectiveETHValue, totalETHBefore, totalSharesBefore);
