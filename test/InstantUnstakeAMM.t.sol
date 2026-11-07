@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import {Test} from "forge-std/src/Test.sol";
+import {Test} from "forge-std/Test.sol";
 import {InstantUnstakePool} from "../src/protocol/InstantUnstakePool.sol";
 import {RestakingVault} from "../src/protocol/RestakingVault.sol";
 import {ExchangeRateOracle} from "../src/oracle/ExchangeRateOracle.sol";
