@@ -1,0 +1,14 @@
+# Foundry output
+out/
+cache/
+
+# Node dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
